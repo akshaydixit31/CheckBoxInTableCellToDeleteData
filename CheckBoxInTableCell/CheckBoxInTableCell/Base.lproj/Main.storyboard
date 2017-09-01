@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheckBoxInTableCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DpU-fy-Ezn">
+                                <rect key="frame" x="0.0" y="50" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellData" rowHeight="100" id="kNy-EM-jOb" customClass="CellData" customModule="CheckBoxInTableCell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kNy-EM-jOb" id="rHw-eM-6ia">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCm-iy-rUR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonOnCell:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oh1-aJ-ZfA"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="OSQ-iP-Lgh">
+                                                    <rect key="frame" x="28" y="35" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Aur-IL-nAb"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Ia6-z9-Jpe"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yCm-iy-rUR" firstAttribute="leading" secondItem="rHw-eM-6ia" secondAttribute="leading" id="3V7-gS-NrP"/>
+                                                <constraint firstItem="yCm-iy-rUR" firstAttribute="top" secondItem="rHw-eM-6ia" secondAttribute="top" id="6FC-jA-FVh"/>
+                                                <constraint firstItem="OSQ-iP-Lgh" firstAttribute="leading" secondItem="rHw-eM-6ia" secondAttribute="leading" constant="28" id="WKV-hE-64F"/>
+                                                <constraint firstAttribute="trailing" secondItem="yCm-iy-rUR" secondAttribute="trailing" id="fNz-ay-hSb"/>
+                                                <constraint firstItem="OSQ-iP-Lgh" firstAttribute="centerY" secondItem="rHw-eM-6ia" secondAttribute="centerY" id="ijG-pQ-kad"/>
+                                                <constraint firstAttribute="bottom" secondItem="yCm-iy-rUR" secondAttribute="bottom" id="nKo-cg-LeC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonOnCell" destination="yCm-iy-rUR" id="cLO-lk-00t"/>
+                                            <outlet property="checkBoxImage" destination="OSQ-iP-Lgh" id="WXn-XP-bnc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJi-TC-Fsd">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G8H-cS-BEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qkQ-Nv-SQL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8I-mK-EXU">
+                                <rect key="frame" x="121.5" y="13" width="132" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DpU-fy-Ezn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="A1f-rv-iub"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DpU-fy-Ezn" secondAttribute="bottom" constant="50" id="AaI-qW-bGX"/>
+                            <constraint firstItem="hJi-TC-Fsd" firstAttribute="trailing" secondItem="DpU-fy-Ezn" secondAttribute="trailing" id="Lj9-kS-Doa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Y8I-mK-EXU" secondAttribute="top" constant="7" id="R9q-lp-M6A"/>
+                            <constraint firstItem="Y8I-mK-EXU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SUy-Al-ugt"/>
+                            <constraint firstItem="hJi-TC-Fsd" firstAttribute="leading" secondItem="DpU-fy-Ezn" secondAttribute="leading" id="Vi9-uf-eLe"/>
+                            <constraint firstItem="DpU-fy-Ezn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6f-sF-7Iz"/>
+                            <constraint firstItem="hJi-TC-Fsd" firstAttribute="bottom" secondItem="DpU-fy-Ezn" secondAttribute="bottom" constant="50" id="mPu-Oc-joF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DpU-fy-Ezn" secondAttribute="trailing" id="tf6-Po-E40"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="DpU-fy-Ezn" id="C1N-eH-csP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940" y="-702"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Uncheck" width="150" height="150"/>
+    </resources>
+</document>
