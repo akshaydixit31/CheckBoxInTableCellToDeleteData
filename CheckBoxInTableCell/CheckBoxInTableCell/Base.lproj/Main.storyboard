@@ -83,28 +83,47 @@
                                 <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-Fc-Vys">
+                                <rect key="frame" x="320" y="12" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1cJ-Uv-pUs"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="kJ9-KE-yF3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhl-KR-XNd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WCE-Fc-Vys" secondAttribute="trailing" constant="9" id="3Hw-98-kE6"/>
                             <constraint firstItem="DpU-fy-Ezn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="A1f-rv-iub"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DpU-fy-Ezn" secondAttribute="bottom" constant="50" id="AaI-qW-bGX"/>
                             <constraint firstItem="hJi-TC-Fsd" firstAttribute="trailing" secondItem="DpU-fy-Ezn" secondAttribute="trailing" id="Lj9-kS-Doa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Y8I-mK-EXU" secondAttribute="top" constant="7" id="R9q-lp-M6A"/>
                             <constraint firstItem="Y8I-mK-EXU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SUy-Al-ugt"/>
                             <constraint firstItem="hJi-TC-Fsd" firstAttribute="leading" secondItem="DpU-fy-Ezn" secondAttribute="leading" id="Vi9-uf-eLe"/>
+                            <constraint firstItem="WCE-Fc-Vys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="b0d-3j-UJQ"/>
                             <constraint firstItem="DpU-fy-Ezn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6f-sF-7Iz"/>
                             <constraint firstItem="hJi-TC-Fsd" firstAttribute="bottom" secondItem="DpU-fy-Ezn" secondAttribute="bottom" constant="50" id="mPu-Oc-joF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WCE-Fc-Vys" secondAttribute="top" constant="8" id="pZc-5P-Kmi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DpU-fy-Ezn" secondAttribute="trailing" id="tf6-Po-E40"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="editButton" destination="WCE-Fc-Vys" id="HGC-Pi-gHa"/>
                         <outlet property="tableView" destination="DpU-fy-Ezn" id="C1N-eH-csP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940" y="-702"/>
+            <point key="canvasLocation" x="-2798" y="-710"/>
         </scene>
     </scenes>
     <resources>

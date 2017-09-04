@@ -11,9 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 //---------- Outlet's ---------------
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIButton!
     //---------- Variable's -------------
+    
     var itemList = ["Apple","Lava","MI","Samsung","Sony","Vivo","Window","Apple","Lava","MI","Samsung","Sony","Vivo","Window","Apple","Lava","MI","Samsung","Sony","Vivo","Window"]
     var buttonName = [String]()
+    var editButtonEnable = false
 //---------- ViewDidLoad method ----------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,18 @@ class ViewController: UIViewController {
         
     }
 //    ================= Button Action's ================
+//    ----------------- Edit Button ---------------
+    @IBAction func editButton(_ sender: UIButton) {
+        if  editButtonEnable == true{
+            editButtonEnable = false
+        }else{
+            editButtonEnable = true
+        }
+        for tempIndex in 0..<itemList.count{
+            buttonName.insert("Uncheck", at: tempIndex)
+        }
+        tableView.reloadData()
+    }
     
 //    ---------------- ButtonOnCell Action -------------
     @IBAction func buttonOnCell(_ sender: UIButton) {
@@ -40,6 +55,7 @@ class ViewController: UIViewController {
             buttonName[indexPath.row] = "Uncheck"
         }
         tableView.reloadData()
+        
     }
 //    ---------------- DeleteButton ---------------
     @IBAction func deleteButton(_ sender: UIButton) {
@@ -73,6 +89,17 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellData", for: indexPath) as? CellData else{fatalError()}
+        if editButtonEnable == false{
+            self.editButton.setTitle("Edit", for: .normal)
+            cell.buttonOnCell.isEnabled = false
+            cell.checkBoxImage.isHidden = true
+            
+        }else {
+            self.editButton.setTitle("Done", for: .normal)
+            cell.buttonOnCell.isEnabled = true
+            cell.checkBoxImage.isHidden = false
+        }
+        
         cell.buttonOnCell.setTitle(itemList[indexPath.row], for: .normal)
         cell.checkBoxImage.image = UIImage(named: buttonName[indexPath.row])
         return cell
