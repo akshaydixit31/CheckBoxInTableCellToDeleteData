@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 //---------- Outlet's ---------------
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var dleteButtonOutlet: UIButton!
     //---------- Variable's -------------
     
     var itemList = ["Apple","Lava","MI","Samsung","Sony","Vivo","Window","Apple","Lava","MI","Samsung","Sony","Vivo","Window","Apple","Lava","MI","Samsung","Sony","Vivo","Window"]
@@ -91,13 +92,14 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellData", for: indexPath) as? CellData else{fatalError()}
         if editButtonEnable == false{
             self.editButton.setTitle("Edit", for: .normal)
-            cell.buttonOnCell.isEnabled = false
+            cell.buttonOnCell.isUserInteractionEnabled = false
             cell.checkBoxImage.isHidden = true
-            
+            self.dleteButtonOutlet.isHidden = true
         }else {
             self.editButton.setTitle("Done", for: .normal)
-            cell.buttonOnCell.isEnabled = true
+            cell.buttonOnCell.isUserInteractionEnabled = true
             cell.checkBoxImage.isHidden = false
+            self.dleteButtonOutlet.isHidden = false
         }
         
         cell.buttonOnCell.setTitle(itemList[indexPath.row], for: .normal)

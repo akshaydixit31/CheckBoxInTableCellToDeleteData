@@ -117,6 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dleteButtonOutlet" destination="hJi-TC-Fsd" id="nR5-C2-bEC"/>
                         <outlet property="editButton" destination="WCE-Fc-Vys" id="HGC-Pi-gHa"/>
                         <outlet property="tableView" destination="DpU-fy-Ezn" id="C1N-eH-csP"/>
                     </connections>
